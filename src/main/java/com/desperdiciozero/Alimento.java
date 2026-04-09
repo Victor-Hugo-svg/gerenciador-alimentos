@@ -1,21 +1,21 @@
 package com.desperdiciozero;
 
-import java.time.LocalDate;
+import java.time.temporal.Temporal;
 
 public class Alimento {
 	private String nome;
-	private LocalDate dataValidade;
+	private Temporal dataValidade;
 	
-	public Alimento(String nome, LocalDate dataValidade) {
+	public Alimento(String nome, Temporal dataValidade2) {
         if (nome == null || nome.trim().isEmpty()) {
             throw new IllegalArgumentException("O nome do alimento não pode ser vazio.");
         }
         this.nome = nome;
-        this.dataValidade = dataValidade;
+        this.dataValidade = dataValidade2;
     }
 
     public String getNome() { return nome; }
-    public LocalDate getDataValidade() { return dataValidade; }
+    public Temporal getDataValidade() { return dataValidade; }
 
     @Override
     public String toString() {

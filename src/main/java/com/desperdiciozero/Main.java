@@ -1,68 +1,89 @@
 package com.desperdiciozero;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         GerenciadorAlimentos gerenciador = new GerenciadorAlimentos();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        int opcao = -1;
 
-        System.out.println("=== Gerenciador de Validade de Alimentos ===");
-        System.out.println("Evite o desperdício controlando sua despensa!");
+        System.out.println("Bem-vindo ao Gerenciador de Alimentos - Desperdício Zero!");
 
-        while (true) {
-            System.out.println("\n1. Adicionar Alimento");
-            System.out.println("2. Listar Todos");
-            System.out.println("3. Alerta de Vencimento (Próximos 3 dias)");
-            System.out.println("4. Sair");
+        while (opcao != 0) {
+            System.out.println("\n=== MENU PRINCIPAL ===");
+            System.out.println("1. Adicionar novo alimento");
+            System.out.println("2. Listar todos os alimentos");
+            System.out.println("3. Ver alimentos próximos do vencimento");
+            System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
-            
-            String opcao = scanner.nextLine();
 
-            if (opcao.equals("1")) {
-                System.out.print("Nome do alimento: ");
-                String nome = scanner.nextLine();
-                System.out.print("Data de validade (DD/MM/AAAA): ");
-                String dataStr = scanner.nextLine();
-                
-                try {
-                    LocalDate validade = LocalDate.parse(dataStr, formatter);
-                    gerenciador.adicionarAlimento(new Alimento(nome, validade));
-                    System.out.println("Alimento adicionado com sucesso!");
-                } catch (DateTimeParseException e) {
-                    System.out.println("Erro: Formato de data inválido. Use DD/MM/AAAA.");
-                } catch (IllegalArgumentException e) {
-                    System.out.println("Erro: " + e.getMessage());
-                }
-            } else if (opcao.equals("2")) {
-                System.out.println("\n--- Sua Despensa ---");
-                for (Alimento a : gerenciador.listarTodos()) {
-                    System.out.println(a);
-                }
-            } else if (opcao.equals("3")) {
-                System.out.println("\n--- ATENÇÃO: Vencendo em breve ---");
-                List<Alimento> alertas = gerenciador.listarProximosDoVencimento(3);
-                if (alertas.isEmpty()) {
-                    System.out.println("Nenhum alimento vencendo nos próximos 3 dias.");
-                } else {
-                    for (Alimento a : alertas) {
-                        System.out.println(a);
-                    }
-                }
-            } else if (opcao.equals("4")) {
-                System.out.println("Encerrando... Evite o desperdício!");
-                break;
+            if (scanner.hasNextInt()) {
+                opcao = scanner.nextInt();
+                scanner.nextLine(); 
             } else {
-                System.out.println("Opção inválida.");
+                System.out.println("Por favor, digite um número válido.");
+                scanner.nextLine(); 
+                continue;
+            }
+
+            switch (opcao) {
+                case 1:
+                    System.out.println("\n-- ADICIONAR ALIMENTO --");
+                    System.out.print("Digite o nome do alimento: ");
+                    String nome = scanner.nextLine();
+                    
+                    System.out.print("Digite a data de validade (ex: 2026-12-31): ");
+                    String dataString = scanner.nextLine();
+
+                    try {
+                        // TENTA CONVERTER A STRING PARA LOCALDATE AQUI!
+                        LocalDate dataValidade = LocalDate.parse(dataString);
+                        
+                        // Cria o objeto passando a data convertida e envia para o gerenciador
+                        Alimento novoAlimento = new Alimento(nome, dataValidade);
+                        gerenciador.adicionarAlimento(novoAlimento);
+                        System.out.println("Alimento adicionado com sucesso!");
+                        
+                    } catch (DateTimeParseException e) {
+                        // Se o usuário digitar "amanhã" em vez de "2026-12-31", o programa não quebra
+                        System.out.println("Erro: Formato de data inválido! Use o formato AAAA-MM-DD.");
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("\n-- LISTA DE ALIMENTOS --");
+                    gerenciador.listarTodos();
+                    break;
+
+                case 3:
+                    System.out.println("\n-- PRÓXIMOS DO VENCIMENTO --");
+                    System.out.print("Avisar vencimento em até quantos dias? ");
+                    if (scanner.hasNextInt()) {
+                        int dias = scanner.nextInt();
+                        scanner.nextLine(); 
+                        gerenciador.listarProximosDoVencimento(dias);
+                    } else {
+                        System.out.println("Por favor, digite um número inteiro para os dias.");
+                        scanner.nextLine();
+                    }
+                    break;
+
+                case 0:
+                    System.out.println("\nEncerrando o sistema. Até logo!");
+                    break;
+
+                default:
+                    System.out.println("\nOpção inválida! Escolha um número do menu.");
+                    break;
             }
         }
-        scanner.close();
+
+        scanner.close(); 
     }
+
+
 }
-
-
