@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="C:\Users\Victor Hugo\eclipse-workspace\gerenciador-alimentos\src\main\java\com\desperdiciozero\Alimento.java">
+<error line="1" severity="error" message="O arquivo package-info.java está faltando." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
+<error line="6" column="1" severity="error" message="O arquivo contém caracteres de tabulação (esta é a primeira ocorrência)." source="com.puppycrawl.tools.checkstyle.checks.whitespace.FileTabCharacterCheck"/>
+<error line="6" column="9" severity="error" message="Falta o comentário Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+<error line="7" column="9" severity="error" message="Falta o comentário Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+<error line="8" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
+<error line="9" column="9" severity="error" message="Falta o comentário Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="9" column="25" severity="error" message="O parâmetro nome deve ser final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+<error line="9" column="32" severity="error" message="&apos;nome&apos; esconde um campo." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+<error line="9" column="38" severity="error" message="O parâmetro dataValidade deve ser final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+<error line="9" column="48" severity="error" message="&apos;dataValidade&apos; esconde um campo." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+<error line="11" severity="error" message="A linha contém mais do que 80 caracteres (foram encontrados 89)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="17" column="5" severity="error" message="A classe &apos;Alimento&apos; parece ter sido projetada para extensão (permite subclasses), mas o método &apos;getNome&apos; não tem um javadoc que explica como fazer isso de forma segura. Se a classe não é projetada para extensão, considere fazer a classe &apos;Alimento&apos; ser final, tornar o método &apos;getNome&apos; estático/final/abstrato/vazio ou adicione as anotações permitidas ao método." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<error line="17" column="29" severity="error" message="O &apos;{&apos; na coluna 29 deveria ser seguido de uma quebra de linha." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="18" column="5" severity="error" message="A classe &apos;Alimento&apos; parece ter sido projetada para extensão (permite subclasses), mas o método &apos;getDataValidade&apos; não tem um javadoc que explica como fazer isso de forma segura. Se a classe não é projetada para extensão, considere fazer a classe &apos;Alimento&apos; ser final, tornar o método &apos;getDataValidade&apos; estático/final/abstrato/vazio ou adicione as anotações permitidas ao método." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<error line="18" column="40" severity="error" message="O &apos;{&apos; na coluna 40 deveria ser seguido de uma quebra de linha." source="com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck"/>
+<error line="20" column="5" severity="error" message="A classe &apos;Alimento&apos; parece ter sido projetada para extensão (permite subclasses), mas o método &apos;toString&apos; não tem um javadoc que explica como fazer isso de forma segura. Se a classe não é projetada para extensão, considere fazer a classe &apos;Alimento&apos; ser final, tornar o método &apos;toString&apos; estático/final/abstrato/vazio ou adicione as anotações permitidas ao método." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="C:\Users\Victor Hugo\eclipse-workspace\gerenciador-alimentos\src\main\java\com\desperdiciozero\GerenciadorAlimentos.java">
+<error line="1" severity="error" message="O arquivo não termina com uma linha em branco." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="9" column="5" severity="error" message="Falta o comentário Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck"/>
+<error line="11" column="5" severity="error" message="A classe &apos;GerenciadorAlimentos&apos; parece ter sido projetada para extensão (permite subclasses), mas o método &apos;adicionarAlimento&apos; não tem um javadoc que explica como fazer isso de forma segura. Se a classe não é projetada para extensão, considere fazer a classe &apos;GerenciadorAlimentos&apos; ser final, tornar o método &apos;adicionarAlimento&apos; estático/final/abstrato/vazio ou adicione as anotações permitidas ao método." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<error line="11" column="5" severity="error" message="Falta o comentário Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="11" column="35" severity="error" message="O parâmetro alimento deve ser final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+<error line="15" column="5" severity="error" message="A classe &apos;GerenciadorAlimentos&apos; parece ter sido projetada para extensão (permite subclasses), mas o método &apos;listarTodos&apos; não tem um javadoc que explica como fazer isso de forma segura. Se a classe não é projetada para extensão, considere fazer a classe &apos;GerenciadorAlimentos&apos; ser final, tornar o método &apos;listarTodos&apos; estático/final/abstrato/vazio ou adicione as anotações permitidas ao método." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<error line="15" column="5" severity="error" message="Falta o comentário Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="19" column="5" severity="error" message="A classe &apos;GerenciadorAlimentos&apos; parece ter sido projetada para extensão (permite subclasses), mas o método &apos;listarProximosDoVencimento&apos; não tem um javadoc que explica como fazer isso de forma segura. Se a classe não é projetada para extensão, considere fazer a classe &apos;GerenciadorAlimentos&apos; ser final, tornar o método &apos;listarProximosDoVencimento&apos; estático/final/abstrato/vazio ou adicione as anotações permitidas ao método." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<error line="19" column="5" severity="error" message="Falta o comentário Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="19" column="54" severity="error" message="O parâmetro diasAlerta deve ser final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+<error line="24" severity="error" message="A linha contém mais do que 80 caracteres (foram encontrados 84)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="C:\Users\Victor Hugo\eclipse-workspace\gerenciador-alimentos\src\main\java\com\desperdiciozero\Main.java">
+<error line="9" column="1" severity="error" message="Classes utilitárias não deveriam ter construtores públicos ou com visibilidade de pacote." source="com.puppycrawl.tools.checkstyle.checks.design.HideUtilityClassConstructorCheck"/>
+<error line="10" column="5" severity="error" message="Falta o comentário Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="10" column="29" severity="error" message="O parâmetro args deve ser final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+<error line="24" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
+<error line="32" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
+<error line="38" severity="error" message="A linha contém mais do que 80 caracteres (foram encontrados 90)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="49" severity="error" message="A linha contém mais do que 80 caracteres (foram encontrados 83)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="49" column="81" severity="error" message="&apos;3&apos; é um número mágico." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="51" severity="error" message="A linha contém mais do que 80 caracteres (foram encontrados 88)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+</checkstyle>
