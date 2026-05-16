@@ -18,6 +18,7 @@ public class Main {
             System.out.println("1. Adicionar novo alimento");
             System.out.println("2. Listar todos os alimentos");
             System.out.println("3. Ver alimentos próximos do vencimento");
+            System.out.println("4. Consultar calorias de uma fruta na internet");
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
 
@@ -70,6 +71,14 @@ public class Main {
                         System.out.println("Por favor, digite um número inteiro para os dias.");
                         scanner.nextLine();
                     }
+                    break;
+                    
+                case 4:
+                    System.out.println("\n-- CONSULTA DE CALORIAS --");
+                    System.out.print("Digite uma fruta em INGLÊS (ex: Apple, Banana, Orange): ");
+                    String fruta = scanner.nextLine();
+                    NutricaoService api = new NutricaoService();
+                    System.out.println(api.consultarCalorias(fruta));
                     break;
 
                 case 0:
